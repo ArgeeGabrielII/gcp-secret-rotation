@@ -7,7 +7,6 @@ export class SharedService {
     // Hasura Service
     async processGraphRequest(query: any) {
         try {
-            // console.log(`[LOG] processGraphRequest Query: ${query}; EP: ${process.env.GRAPHQL_ENDPOINT}; SC: ${process.env.GRAPHQL_ENDPOINT_AUTH}`);
             const response = await fetch(process.env.GRAPHQL_ENDPOINT, {
                 method: 'POST',
                 headers: {

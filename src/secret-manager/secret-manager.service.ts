@@ -19,7 +19,7 @@ export class SecretManagerService {
 
     async getSecret(name: string): Promise<string> {
         const [secret] = await this.client.accessSecretVersion({
-            name: `projects/${process.env.PROJECT_ID}/secrets/${name}/versions/latest`,
+            name: `projects/${process.env.GCP_PROJECT_ID}/secrets/${name}/versions/latest`,
         });
         console.log(`[SINGLE GET NAME] : ${name} [RESPONSE] : ${secret.payload.data}`);
         return secret.payload.data.toString();
